@@ -9,13 +9,13 @@
   <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <title>Hello React 10 - JSX에서 조건(3항) 연산자 사용하기</title>
+  <title>Hello React 12 - 상태관리와 클릭 이벤트</title>
 </head>
 <body>
   <div id="root"></div>
   <script type="text/babel">  
     
-    let title = "조건(3항) 연산자 사용하기";
+    let title = "클래스로 컴포넌트 만들기";
 
     let seeSharp = {
       title: "C#",
@@ -39,26 +39,6 @@
       return <p>Copyright &copy;</p>
     }
 
-    function BookCardother(props) {
-      // console.log(Object.keys(props))
-      // console.log(props)
-      return (
-        <div className="container mb-2">
-          <div className="row">
-            <div className="col-12">
-              {props.title}
-            </div>
-            <div className="col-2">
-              {props.title}
-            </div>
-            <div className="col-10">
-              {props.description}
-            </div>
-          </div>
-        </div>
-      )
-    }
-
     function BookCard({title, description, price}) {
       return (
         <div className="container mb-2">
@@ -79,56 +59,43 @@
       )
     }
 
-    function BookList(props) {
-      return (
-        <>
-          {
-            (props.sortOrder === "ASC")
-          ?
-          
-            <>
-            <BookCard title={seeSharp.title} description={seeSharp.description} price= {30000 }/>
-            <BookCard title="React 교과서" description="React 책입니다." price={55000}/>
-            </>
-          :
-            <>
-            <BookCard title="React 교과서" description="React 책입니다." price={55000}/>
-            <BookCard title={seeSharp.title} description={seeSharp.description} price= {30000 }/>
-            </>          
-        }
-        </>
-        );
-    }
-    
-    function BookListOther(props) {
-      if (props.sortOrder === "ASC") {
-        return  (
-          <>
-            <BookCard title={seeSharp.title} description={seeSharp.description} price= {30000 }/>
-            <BookCard title="React 교과서" description="React 책입니다." price={55000}/>
-          </>
-        )
+    class BookList extends React.Component {
+      state = {
+        theme: 'blue'
       }
-      else {
+      
+      blueTheme = () => this.setState({theme: 'blue'})
+      whiteTheme = () => this.setState({theme: 'white'})
+
+      render() {
         return (
           <>
-            <BookCard title="React 교과서" description="React 책입니다." price={55000}/>
-            <BookCard title={seeSharp.title} description={seeSharp.description} price= {30000 }/>
-            </>
-        )
+              <div>{this.state.theme === "white" ? "white theme" : "blue theme"}</div>
+              <div>
+                <button onClick={ () => {this.setState({theme: 'white'})}}>White1</button>
+                <button onClick={ this.whiteTheme}>White2</button>
+                <button onClick={ () => {this.setState({theme: 'blue'})}}>Blue1</button>
+                <button onClick={this.blueTheme}>Blue2</button>
+                </div>
+              <BookCard title={seeSharp.title} description={seeSharp.description} price= {30000 }/>
+              <BookCard title="React 교과서" description="React 책입니다." price={55000}/>
+          </>
+        );
       }
     }
 
-
-    function BookApp() {
-      return (
-        <>
+    // 클래스형 컴포넌트
+    class BookApp extends React.Component {
+      render() {
+        return (
+          <>
           <BookTitle/> 
-          <BookList sortOrder="ASC"/>    
+          <BookList sortOrder="DESC"/>    
           <BookFooter/>
           <Copyright/>
         </>
-      );
+        )
+      }
     }
 
     // 최종 랜더링

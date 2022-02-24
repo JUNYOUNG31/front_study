@@ -9,13 +9,13 @@
   <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <title>Hello React 10 - JSX에서 조건(3항) 연산자 사용하기</title>
+  <title>Hello React 11 - 클래스형 컴포넌트</title>
 </head>
 <body>
   <div id="root"></div>
   <script type="text/babel">  
     
-    let title = "조건(3항) 연산자 사용하기";
+    let title = "클래스로 컴포넌트 만들기";
 
     let seeSharp = {
       title: "C#",
@@ -119,8 +119,8 @@
       }
     }
 
-
-    function BookApp() {
+    // 함수형 컴포넌트
+    function BookAppOther() {
       return (
         <>
           <BookTitle/> 
@@ -129,6 +129,20 @@
           <Copyright/>
         </>
       );
+    }
+
+    // 클래스형 컴포넌트
+    class BookApp extends React.Component {
+      render() {
+        return (
+          <>
+          <BookTitle/> 
+          <BookList sortOrder="DESC"/>    
+          <BookFooter/>
+          <Copyright/>
+        </>
+        )
+      }
     }
 
     // 최종 랜더링
