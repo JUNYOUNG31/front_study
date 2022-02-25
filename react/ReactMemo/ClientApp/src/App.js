@@ -7,6 +7,8 @@ import { Counter } from './components/Counter';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import ReactFragmentDemo from './components/Samples/ReactFragmentDemo';
+import StateDescription from './components/Samples/StateDescription';
+import OnClickEventHandler from './components/Samples/OnClickEventHandler';
 
 
 import './custom.css'
@@ -23,6 +25,8 @@ export default class App extends Component {
         <Route path='/about' component={About}/>
         <Route path='/contact' component={Contact}/>
         <Route path='/ReactFragmentDemo' component={ReactFragmentDemo}/>
+        <Route path='/StateDescription' component={StateDescription}/>
+        <Route path='/OnClickEventHandler' component={OnClickEventHandler}/>
       </Layout>
     );
   }
