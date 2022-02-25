@@ -4,6 +4,10 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
+import { About } from './components/About';
+import { Contact } from './components/Contact';
+import ReactFragmentDemo from './components/Samples/ReactFragmentDemo';
+
 
 import './custom.css'
 
@@ -16,6 +20,9 @@ export default class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
         <Route path='/fetch-data' component={FetchData} />
+        <Route path='/about' component={About}/>
+        <Route path='/contact' component={Contact}/>
+        <Route path='/ReactFragmentDemo' component={ReactFragmentDemo}/>
       </Layout>
     );
   }
