@@ -9,6 +9,11 @@ import { Contact } from './components/Contact';
 import ReactFragmentDemo from './components/Samples/ReactFragmentDemo';
 import StateDescription from './components/Samples/StateDescription';
 import OnClickEventHandler from './components/Samples/OnClickEventHandler';
+import { OneWayBinding } from './components/Demos/OneWayBinding/OneWayBinding';
+import TodoListInMemory from './components/TodoListInMemory';
+import FunctionStateDemo from './components/Samples/FunctionStateDemo';
+import UseEffectDemo from './components/Samples/UseEffectDemo';
+import UseEffectFetchApi from './components/Samples/UseEffectFetchApi';
 
 
 import './custom.css'
@@ -27,6 +32,11 @@ export default class App extends Component {
         <Route path='/ReactFragmentDemo' component={ReactFragmentDemo}/>
         <Route path='/StateDescription' component={StateDescription}/>
         <Route path='/OnClickEventHandler' component={OnClickEventHandler}/>
+        <Route path='/OneWayBinding' component={OneWayBinding}/>
+        <Route path='/TodoListInMemory' component={TodoListInMemory}/>
+        <Route path='/FunctionStateDemo' component={FunctionStateDemo}/>
+        <Route path='/UseEffectDemo' component={UseEffectDemo}/>
+        <Route path='/UseEffectFetchApi' component={UseEffectFetchApi}/>
       </Layout>
     );
   }
