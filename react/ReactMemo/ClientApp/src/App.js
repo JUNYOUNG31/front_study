@@ -14,6 +14,8 @@ import TodoListInMemory from './components/TodoListInMemory';
 import FunctionStateDemo from './components/Samples/FunctionStateDemo';
 import UseEffectDemo from './components/Samples/UseEffectDemo';
 import UseEffectFetchApi from './components/Samples/UseEffectFetchApi';
+import FetchApiPractice from './components/Samples/FetchApiPractice';
+import TextBoxOnChangeEventHandler from './components/Samples/TextBoxOnChangeEventHandler';
 
 
 import './custom.css'
@@ -37,6 +39,8 @@ export default class App extends Component {
         <Route path='/FunctionStateDemo' component={FunctionStateDemo}/>
         <Route path='/UseEffectDemo' component={UseEffectDemo}/>
         <Route path='/UseEffectFetchApi' component={UseEffectFetchApi}/>
+        <Route path='/FetchApiPractice' component={FetchApiPractice}/>
+        <Route path='/TextBoxOnChangeEventHandler' component={TextBoxOnChangeEventHandler}/>
       </Layout>
     );
   }
