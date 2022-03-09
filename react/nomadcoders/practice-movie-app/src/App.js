@@ -4,7 +4,7 @@ import Home from "./routes/Home";
 function App() {
   return <Router>
     <Routes>
-      <Route path="/movie" element={<Detail/>}></Route>
+      <Route path="/movie/:id" element={<Detail/>}></Route>
       <Route path="/" element={< Home />}></Route>
       {/* <Route path="/hello"><h1>Hello</h1></Route> */}
     </Routes>
