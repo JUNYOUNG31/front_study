@@ -15,7 +15,6 @@ function Detail() {
     <div>
       <h1>Detail</h1>
       <h1>{movie.title}</h1>
-      <img src={movie.medium_cover_image} />
       <h3>{movie.date_uploaded}</h3>
       <h3>{movie.rating}</h3>
       {/* <ul>{movie.genres.map((g) => (
